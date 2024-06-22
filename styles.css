@@ -1,0 +1,655 @@
+/* General Styles */
+html {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 400;
+    overflow-x: hidden; 
+}
+
+main {
+    padding: 2rem 0rem 1rem 0rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+    background-color: red;
+    color: white;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Header-Welcome */
+.header-welcome {
+    background: url('img/cover.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    position: fixed;
+    width: 100vw;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    top: 0;
+    background-color: white;
+    border-bottom: 3px solid #f4f4f4;
+    z-index: 1000;
+}
+
+header.scrolled .nav-bar {
+    position: fixed;
+    margin: 0;
+    right: 2rem;
+}
+
+header .logo img {
+    padding-left: 3rem;
+    max-height: 5rem;
+}
+
+header .logo:hover {
+    opacity: .8;
+}
+
+header .logo:active {
+    opacity: .7;
+}
+
+header.scrolled .logo img {
+    content: url(img/logo.png);
+    padding-left: 1rem;
+    max-height: 3rem;
+    width: auto;
+}
+
+header .nav-bar {
+    display: flex;
+    margin-left: 0;
+    margin-right: 1rem;
+    gap: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    opacity: .6;
+    letter-spacing: 1px;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    color: white;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+}
+
+header.scrolled .nav-item {
+    color: red;
+}
+
+.nav-item:hover {
+    opacity: .9;
+}
+
+.nav-item:active {
+    opacity: .8;
+}
+
+.nav-item.current {
+    opacity: 1;
+    font-weight: 600;
+}
+
+header .login {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .login button {
+    border-radius: 20px;
+}
+
+header .lg select {
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: transparent;
+}
+
+header.scrolled .lg select {
+    color: red;
+}
+
+header .lg select option {
+    color: red;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Welcome Section */
+.welcome {
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem 2rem 1rem;
+}
+
+.welcome h1 {
+    margin: 0 0 1rem 0;
+    width: 100%;
+}
+
+.welcome p {
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.welcome button {
+    padding: 15px 25px 15px 25px;
+}
+
+/* Section Styles */
+section {
+    padding: 3rem 6%;
+}
+
+.events-downloads {
+    display: flex;
+    gap: 3rem;
+}
+
+.events {
+    flex: 4;
+}
+
+.events table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0.5rem;
+}
+
+.events th, .events td {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.events th {
+    text-transform: uppercase;
+    padding: 0.75rem 0rem;
+    font-size: 1.2rem;
+    min-width: 70px;
+}
+
+.events th:nth-child(1) {
+    width: 70%;
+    min-width: 100px;
+}
+
+.events th:nth-child(2) {
+    width: 15%;
+}
+
+.events td {
+    color: #7e829a;
+    padding: 1rem 0.5rem 1rem 0rem;
+    height: 3rem;
+}
+
+.events td a {
+    display: block;
+    padding-left: 0.75rem;
+}
+
+.events td a:hover {
+    color: #618eb3;
+}
+
+.downloads {
+    position: relative;
+    margin-left: auto;
+    flex: 1;
+    max-width: 220px;
+    height: fit-content;
+    padding: 1.7rem;
+    background-color: #f4f4f4;
+    border-top: 0.5rem solid red;
+}
+
+.downloads::after {
+    position: absolute;
+    background-color: #828282;
+    content: '';
+    left: 5px;
+    top: 5px;
+    width: 99%;
+    height: 100%;
+    z-index: -1;
+    transform: skewX(1deg);
+}
+
+
+
+.downloads h3 {
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+    margin: 0;
+    width: fit-content;
+}
+
+.downloads ul {
+    list-style: none;
+    padding: 0;
+    width: fit-content;
+}
+
+.downloads ul li {
+    margin: 0.5rem 0;
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    color: #7e829a;
+    gap: 0.5rem;
+}
+
+.downloads ul li:hover {
+    font-weight: 600;
+}
+
+.downloads ul li p {
+    width: 8rem;
+}
+
+.downloads ul li .download-btn {
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.news {
+    margin-top: 5rem;
+}
+
+.news-cards {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.news-item {
+    padding: 1rem;
+    flex: 1;
+}
+
+.news div .news-item {
+    text-align: left;
+}
+
+.news-item h3 a {
+    margin-bottom: 0.5rem;
+    color: #333;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.news-item p {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.news-item a {
+    color: red;
+}
+
+.news-item a:hover {
+    color: #c0392b;
+}
+
+.news div {
+    text-align: center;
+}
+
+.information {
+    display: block;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.info {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.info-box {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.info-box h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info-card {
+    background: #f9f9f9;
+    padding: 1.5rem 1rem;
+    border-radius: 5px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.information .div-btn {
+    padding-top: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.information div .info-btn, .news div button {
+    text-align: center;
+    background-color: transparent;
+    border: 3px solid red;
+    color: red;
+    font-weight: 600;
+}
+
+.information div .info-btn:hover, .news div button:hover {
+    border: 3px solid #c0392b;
+    color: #c0392b;
+}
+
+.login-section, .registration {
+    margin: 5rem 0;
+    display: grid;
+    grid-template-columns: 4fr 2fr 4fr;
+}
+
+.login-section img {
+    box-shadow: -10px 8px red;
+}
+
+.login-box {
+    text-align: left;
+}
+
+.reg-box {
+    text-align: right;
+}
+
+.registration img {
+    box-shadow: 10px 8px red;
+}
+
+
+/* Footer Styles */
+footer {
+    background: red;
+    color: white;
+    text-align: left;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+footer .footer-info {
+    padding-left: 6%;
+    display: flex;
+    direction: column;
+    gap: 3rem;
+}
+
+footer .contact-info {
+    gap: 0.5rem;
+}
+
+footer .footer-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+footer .footer-nav ul li a {
+    color: white;
+}
+
+.copyright {
+    margin: 3rem 0 0 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Corner Logo */
+.corner-img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.corner-img {
+    position: absolute;
+    right: 6%;
+    bottom: 0;
+    width: 200px;
+    height: auto;
+    z-index: 500;
+}
+
+.corner-img .darker {
+    display: block;
+    width: 200px;
+    height: 1610px;
+    overflow: hidden;
+    z-index: 501;
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    header .logo img {
+        padding-left: 1rem;
+    }
+    .nav-bar nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        background-color: #f4f4f4;
+        width: 100%;
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-bar nav ul.show {
+        display: flex;
+        opacity: .9;
+        margin-top: 4rem;
+        padding: 2rem 1rem;
+        align-items: center;
+    }
+
+    header.scrolled .nav-bar nav ul.show {
+        position: fixed;
+        margin-top: 1rem;
+        left: 0;
+    }
+
+    .nav-bar {
+        flex-direction: row;
+    }
+
+    #nav-items .nav-item {
+        color: red;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .events-downloads {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events, .downloads {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .news-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-item {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-box, .contact-box {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .corner-img-container {
+        display: none;
+    }
+}
+
+/* Additional Media Queries for Small Devices */
+@media screen and (max-width: 600px) {
+    body {
+        width: 100vw;
+    }
+
+    .nav-bar nav ul {
+        top: 1.5rem;
+    }
+
+    .nav-bar nav ul.show {
+        top: 4rem;
+    }
+    
+    header .logo img {
+        content: url('img/logo.png');
+        max-height: 3rem;
+        width: auto;
+        padding-left: 0.5rem;
+    }
+
+    #navbar {
+        padding: 1rem 0.5rem;
+    }
+
+    #navbar .nav-bar {
+        padding-right: 0;
+    }
+
+    #navbar.scrolled .nav-bar {
+        right: 0.5rem;
+    }
+
+    .login-section img, .registration img {
+        display: none;
+    }
+
+    .login-section {
+        grid-template-columns: 1fr auto;
+    }
+
+    .registration {
+        grid-template-columns: auto 1fr;
+    }
+
+    .login-box, .contact-box {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    footer .footer-info {
+        flex-direction: column;
+    }
+}
